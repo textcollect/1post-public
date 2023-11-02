@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modal</title>
+</head>
+
+<body>
+    <!-- Modal -->
+    <!-- change id="exampleModal" to the id set in content.html -->
+    <div th:fragment="loginModal" class="modal fade" id="loginModal1" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		
+		<!-- Spring Security Framework works cloasely with thymeleaf -->
+		<div th:if="${param.error}" class="error">Invalid username and/or password.</div>
+					
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+					
+                    <form th:action="@{/login}" method="post">
+                        <div class="mb-4 col-auto">
+                            <!-- for and id should be same value -->
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" aria-label="Username" aria-describedby="usernameHelp" placeholder="Username" autocomplete="off" required>
+                        </div>
+            
+                        <div class="mb-4 col-auto">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelpBlock" placeholder="Password" required>
+                            <small id="passwordHelpBlock" class="form-text text-muted">Forgot password? Contact us using the help form!</small>
+                        </div>    
+
+                        <button class="btn btn-primary mb-4" type="submit">
+                            Login
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

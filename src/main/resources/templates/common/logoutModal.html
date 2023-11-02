@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Modal</title>
+</head>
+
+<body>
+	<!-- Modal -->
+	<!-- change id="exampleModal" to the id set in content.html -->
+	<div th:fragment="logoutModal" class="modal fade" id="logoutModal1" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+		<div class="modal-dialog">
+			<form th:action="@{/logout}" method="post" id="logoutform">
+				<div class="modal-content">
+
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">Logout</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+
+					<div class="modal-body">
+						Are you sure you want to log out?
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No, I want to
+							stay!</button>
+						<button type="submit" class="btn btn-primary">
+							Yes, log me out!
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>

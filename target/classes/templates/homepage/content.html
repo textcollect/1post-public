@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+</head>
+
+<body>
+    <!-- Grid system for content -->
+    <div th:fragment="content" class="container" style="padding-top: 5rem;">
+        <div class="row text-center">
+
+            <!-- Column 1 (Uses 6 columns out of 12)-->
+            <div class="col-12">
+                <h1>1post</h1>
+                <div class="myImage imgScale" style="width:auto">
+                    <img class="img-fluid" src="images/ilya-b4s7eitmEqs-unsplash.jpg" alt="stock image of a computer screen" style="width:50%">
+                    <p></p>
+                </div>
+            </div>
+
+            <div sec:authorize="isAnonymous()" class="col-12">
+                <a href="login.html" class="btn btn-info">Login Now</a>
+            </div>
+
+			<div sec:authorize="isAuthenticated()" class="col-12">
+                <a href="#" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#logoutModal1">Logout</a>
+            </div>
+    
+            <div class="col-12">
+                <h2>About this site</h2>
+                <p>1post helps you to stay up-to-date with the latest stories from your favorite creators!</p>
+            </div>
+            
+        </div>
+
+        <br /><br />
+        <div class="card mb-3" id="indexAddonContent1" style="background-color: #f6f3e9;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="images/postlist.png" class="img-fluid rounded-start" alt="Demonstration of postlist page" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body" style="background-color: #f6f3e9;">
+                        <p class="card-text">1post features an imageboard style layout, but without images so that you can concentrate on the important stuff: the story.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/myStyles.css">
+	<title>Navbar</title>
+</head>
+
+<body>
+	<nav th:fragment="navbar" class="navbar fixed-top navbar-expand-lg" style="background-color: rgb(255, 241, 229); border-bottom: 2px solid rgb(242, 223, 206);">
+		<div class="container-fluid">
+
+			<a class="navbar-brand" th:href="@{index}">
+				<img src="images/chat-left-dots.svg" alt="brand image" width="30" height="30" class="d-inline-block align-top">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+				<ul class="navbar-nav mb-2 mb-lg-0"></ul>
+				
+				<ul class="navbar-nav mb-2 mb-lg-0">
+
+					<li class="nav-item">
+						<!-- href link to homepage which is index.html -->
+						<a class="nav-link active" aria-current="page" th:href="@{index}">Home</a>
+					</li>
+
+					<li class="nav-item">
+						<!-- href link to about.html -->
+						<a class="nav-link" th:href="@{about}">About</a>
+					</li>
+
+					<li class="nav-item">
+						<!-- href link to postlist.html -->
+						<a class="nav-link" th:href="@{postlist}">Posts</a>
+					</li>
+
+					<div sec:authorize="isAuthenticated()">
+						<li class="nav-item">
+							<!-- href link to postForm.html -->
+							<a class="nav-link" th:href="@{postForm}">Post It!</a>
+						</li>
+					</div>
+
+					<li class="nav-item">
+						<!-- href link to help.html -->
+						<a class="nav-link" th:href="@{help}">Help</a>
+					</li>
+					
+					<!-- <div sec:authorize="isAuthenticated()">
+						<a class="nav-link active" data-bs-toggle="modal" data-bs-target="#logoutModal1">Logout</a>
+					</div>
+					
+					<div sec:authorize="isAnonymous()">
+						<a href="login.html" class="nav-link active" aria-current="page">Login</a>
+					</div> -->
+
+				</ul>
+
+				<ul class="navbar-nav mb-2 mb-lg-0">
+					<!-- <div sec:authorize-url="/registerNewPerson"> -->
+					<div sec:authorize="isAnonymous()">
+						<a class="nav-link" th:href="@{registerNewPerson}">Register</a>
+					</div>
+
+					<div sec:authorize="isAuthenticated()">
+						<a class="nav-link active" data-bs-toggle="modal" data-bs-target="#logoutModal1">Logout</a>
+					</div>
+					
+					<div sec:authorize="isAnonymous()">
+						<a href="login.html" class="nav-link active" aria-current="page">Login</a>
+					</div>
+				</ul>
+
+				
+
+			
+			</div>
+
+		</div>
+	</nav>
+</body>
+
+</html>

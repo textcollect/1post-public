@@ -1,0 +1,13 @@
+services:
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=Will8.Normandy3.Forgo.A.Vehicular
+      - MYSQL_ALLOW_EMPTY_PASSWORD=false
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=passw0rd#
+      - MYSQL_DATABASE=onepostdb
+    volumes:
+      - "./conf.d:/etc/mysql/conf.d:ro"

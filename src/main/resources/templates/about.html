@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/myStyles.css">
+
+	<title>About Us</title>
+</head>
+
+<body>
+
+	<!-- Insert Navbar -->
+	<div th:insert="~{common/navbar :: navbar}" id="navbar"></div>
+
+
+	<!-- Content of About Us -->
+	<div class="container text-center" style="padding-top: 5rem;">
+		<div class="row">
+			<div class="col-12">
+				<h2>About us</h2>
+			</div>
+
+			<div class="col-12" style="text-align: left;">
+				<h3>What is this site about?</h3>
+				<p>1post is a <span style="font-weight: bold;">text-only</span> social networking site (web application) where users can post and/or reply once every 24hrs.
+				It is designed primarily for users to post short stories within a 3000 letters word limit. However, there are no strict limitations to what a user can/cannot post.</p>
+				<p>Content found to be offensive or harmful are not allowed and will be removed upon discovery by the site moderators. If you find any such content, please do not hesitate to contact us.
+				<br />Only users who are registered and logged in can post and reply.</p>
+				<p>This site is still a work-in-progress and new features may be added in the future (check the Help page for more information). We hope you enjoy your stay. Happy posting!</p>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="container bottom-margin imgScale" style="padding-bottom: 18px;">
+		<div class="row">
+			<h4>Project Members</h4>
+			<!-- Column 1 -->
+			<!-- Large breakpoint, all 3 in a row -->
+			<!-- Medium breakpoint, same as large-->
+			<!-- Small breakpoint (col-12) 1 per row -->
+			<div class="card mb-3" id="teambio">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img sec:authorize="hasRole('ROLE_ADMIN')" src="images/wong.jpg" class="img-fluid rounded-start" alt="A picture of this team member">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title">Chee How</h5>
+							<p class="card-text">One of the team members that helped in developing this site from start to production.
+								<br />Hi, I'm Chee How, Wong Chee How. I helped create the site together with my fellow team members as a Final Project for the Junior Full-Stack Developer bootcamp from Generation Singapore.
+							This site is the result of all the hard work put in by the team so we hope you enjoy your stay here.
+							<br /><br />Short introduction: I took on this bootcamp to learn more about software development and to know more about how the websites and applications we use daily actually work and how to create them. Creating
+							this web application has been a most interesting experience and I have learnt many things throughout the bootcamp. Through this web application the team and I created,
+							we hope it helps to showcase the skills and knowledge we have gained throughout the bootcamp. Last but not the least, once again, we hope you enjoy the experience this web application provides!</p>
+							<a class="btn btn-info" href="https://github.com/textcollect" target="_blank">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+									<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+								</svg>
+								My Github Page
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Column 3 -->
+			<!-- <div class="col-lg-3 col-md-4 col-12">
+				<div class="card" style="width: 16rem;">
+					<img class="card-img-top" src="images/rolf-van-root-oLthDWAG244-unsplash.jpg" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">ChatGPT-3</h5>
+						<p class="card-text">We know that people do their best when treated with kindness and respect.
+						</p>
+					</div>
+				</div>
+			</div> -->
+
+			<div class="card mb-3" id="teambio">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="images/rolf-van-root-oLthDWAG244-unsplash.jpg" class="img-fluid rounded-start" alt="Image of a computer screen showing OpenAI's GPT-3 homepage">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title">OpenAI's ChatGPT-3</h5>
+							<p class="card-text">OpenAI's ChatGPT, powered by the Large Language Model known as GPT-3.
+								<br />Throughout the course of building this website, ChatGPT has been a key member of the team. It has provided codes (both correct and not very useful ones) at times when the project was unable to proceed due to lack of certain knowledge on the implementations the team had in mind.
+							At times like these, ChatGPT offered various solutions and suggestions with clear explanations (at times) to help the team out. While some codes provided by it might not be very useful/correct/efficient, it nonetheless helped the team to come up with their own solutions based on the answers given.
+							Hence, ChatGPT has proven itself to be a very valuable and important member to the team.
+							<br /><span style="font-size: small; font-style: italic; font-weight: lighter;">p.s. The sample posts were written by this team member.</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mb-3" id="teambio">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="images/rubaitul-azad-6-zLzaQd2uk-unsplash.jpg" class="img-fluid rounded-start" alt="Microsoft Bing logo">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title">AI-powered Bing chat</h5>
+							<p class="card-text">Microsoft's Bing AI chat powered by OpenAI's ChatGPT-4.
+								<br />Different from OpenAI's ChatGPT-3 and their subsequent version, GPT-4, Bing Chat is essentially GPT-4 but with the capability to access the internet.
+							Although being able to search the internet for updated information should make Bing Chat better at providing results to questions, it can sometimes lead to false or inaccurate information at a higher rate of occurrence compared to OpenAI's GPT-3.
+						This is probably because of the way these AI technologies work; if inaccurate information is found to have higher weightage compared to accurate information, the inaccurate information will be provided as the answer (with links to the source of the information provided as reference).
+						Another possibility would be due to how the AI process the query made by the user and the prompts used. Nonetheless, Bing Chat is still a valuable member of the team that developed this website, providing helpful suggestions and useful codes at times.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card mb-3" id="teambio">
+				<div class="row g-0">
+					<div class="col-md-4">
+						<img src="images/bard.png" class="img-fluid rounded-start" alt="Google logo">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+							<h5 class="card-title">Google Bard AI</h5>
+							<p class="card-text">Google's foray into the generative AI space to compete against others like
+								OpenAI's ChatGPT.
+								<br />Only available to the general public very recently, although Bard joined the team at
+								the later stages of the project, it has made significant contributions to the team similar
+								to Bing and ChatGPT-3.
+								Similar to the other 2, Bard has helped in furthering the knowledge and understanding of
+								certain concepts and provided valuable insights and recommendations at times when the
+								project hit a deadlock.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- for loading logoutModal.html -->
+	<div sec:authorize="isAuthenticated()" th:insert="~{common/logoutModal :: logoutModal}" id="logoutModal"></div>
+
+	<!-- for loading footer.html; put after content of about us for it to load at the bottom -->
+	<div th:insert="~{common/footer :: footer}" id="footer"></div>
+
+
+	<!-- script loadings at the bottom -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+		crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.4.js"
+		integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+	<!-- <script>
+        $(document).ready(function()
+        {
+            $("#navbar").load("common/navbar.html");
+            $("#footer").load("common/footer.html");
+        }
+        );
+    </script> -->
+</body>
+
+</html>

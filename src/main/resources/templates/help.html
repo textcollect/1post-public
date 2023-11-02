@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/myStyles.css">
+
+	<title>1post - Help</title>
+</head>
+
+<body>
+	<!-- Insert Navbar -->
+	<div th:insert="~{common/navbar :: navbar}" id="navbar"></div>
+
+	<!-- Form Creation -->
+	<div class="container" style="padding-bottom: 18px;">
+		<form>
+			<h2 class="text-center mb-5" style="padding-top: 5rem;">Frequently Asked Questions</h2>
+
+			<ol class="list-group list-group-numbered">
+				<li class="list-group-item d-flex justify-content-between align-items-start">
+					<div class="ms-2 me-auto">
+						<div class="fw-bold">What is the meaning behind the name of this site (1post)?</div>
+						Because user can only post and reply once a day (every 24 hours, to be exact), the name "1post" was given to this project site 
+						to make it clear even to first-time visitors what the difference with popular social media sites like Twitter.
+					</div>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-start">
+					<div class="ms-2 me-auto">
+						<div class="fw-bold">This site looks interesting, how do I register?</div>
+						This site is invite-only for now. When you receive an invite, you will be asked for your desired username and password. 
+						An account will then be created based on the details received. 
+						To be sure an email invite is really sent from us, make sure to check that the email address ends with "@generation.org".
+					</div>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-start">
+					<div class="ms-2 me-auto">
+						<div class="fw-bold">Why can I not attach images to my posts or replies?</div>
+						That is one of the features of this site (NOT a bug). The reason being: there are already countless other social networking sites that allow you to do so (reddit, facebook, twitter, etc.). Kindly refer to those services if you wish for such functionality.
+						The main idea behind this site is to provide a place for users to pop-in, post/reply, pop-out and continue with their daily lives. Adding images would just make loading the site and reading it slower.
+					</div>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-start">
+					<div class="ms-2 me-auto">
+						<div class="fw-bold">How was this site made?</div>
+						<ul>
+							<li>This site was made by applying quite a number of modifications to the basic template of codes provided throughout the Generation SG Full-Stack Developer bootcamp.</li>
+							<li>For frontend, HTML, CSS and Javascript were used along with the Thymeleaf template engine and the Bootstrap toolkit.</li>
+							<li>MySQL was used as the database.</li>
+							<li>Finally, the backend was coded in Java with the use of the Spring Boot MVC framework to bring everything together.</li>
+						</ul>
+					</div>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-start">
+					<div class="ms-2 me-auto">
+						<div class="fw-bold">What are some of the challenges encountered when making this site?</div>
+						<ul>
+							<li>Having to handle most of the work was rather intense. Thankfully, the public availability and advancement of Large Language Models such as ChatGPT made some of the work (such as suggesting ideas to implement the various features of the site) easier.</li>
+							<li>There were a couple of instances when a small change in the code led to everything breaking apart. Thankfully the issues were identified and fixed.</li>
+							<li>There were some difficulties in the backend when we were trying to link the user ids to the user table. After spending some time to look into the specifics in details, we were able to successfully link everything together.</li>
+						</ul>
+					</div>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-start">
+					<div class="ms-2 me-auto">
+						<div class="fw-bold">What would future revisions look like?</div>
+						<ul>
+							<li>Redo the frontend to make use of the ReactJS library to make things smoother and more reactive.</li>
+							<li>Add a "delete" button for the user's own posts for easy deletion.</li>
+							<li>Edit functionality for user to edit their posts (This feature will only be available to verified-checkmarked users who subscribe to <span style="font-style: italic;">1post-verified</span>)</li>
+							<li>Open up registration to everyone once the server is able to handle the user demand (if said user demand exists).</li>
+							<li>(Tentative) Personal page for each user to view all of their posts.</li>
+						</ul>
+					</div>
+				</li>
+				<li class="list-group-item d-flex justify-content-between align-items-start">
+					<div class="ms-2 me-auto">
+						<div class="fw-bold">Who do I contact for any further enquiries about the site and/or to sign up?</div>
+						Feel free to send us an email here: <a class="btn btn-info" href="mailto:contactsg@generation.org?subject=Contact Generation Singapore">Media contact</a>
+					</div>
+				</li>
+			</ol>
+
+		</form>
+	</div>
+
+	<!-- for loading logoutModal.html -->
+	<div sec:authorize="isAuthenticated()" th:insert="~{common/logoutModal :: logoutModal}" id="logoutModal"></div>
+
+	<!-- for loading footer.html; put after content for it to load at the bottom -->
+	<div th:insert="~{common/footer :: footer}" id="footer"></div>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+		crossorigin="anonymous"></script>
+
+	<script src="https://code.jquery.com/jquery-3.6.4.js"
+		integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
